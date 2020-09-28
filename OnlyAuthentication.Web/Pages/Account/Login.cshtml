@@ -11,7 +11,7 @@
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" value="tier1@contoso.com">
+                <input asp-for="Input.Email" class="form-control" value="dave@contoso.com">
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -19,14 +19,14 @@
                 <input asp-for="Input.Password" class="form-control" value="1">
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <div class="checkbox">
                     <label asp-for="Input.RememberMe">
                         <input asp-for="Input.RememberMe" checked="checked" />
                         @Html.DisplayNameFor(m => m.Input.RememberMe)
                     </label>
                 </div>
-            </div>
+            </div>*@
 
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Log in</button>
@@ -46,11 +46,7 @@
             <h4>Sample Users</h4>
             <hr />
             <div>
-                <p>Anonymous Role: Make sure not logged in</p>
-                <p>Anonymous Role: <code>anon@contoso.com</code> and any password (simulates a user deactivated).</p>
-                <p>Tier1 Role: <code>tier1@contoso.com</code> and any password.</p>
-                <p>Tier2 Role: <code>tier2@contoso.com</code> and any password.</p>
-                <p>Admin Role: <code>admin@contoso.com</code> and any password.</p>
+                <p><code>dave@contoso.com</code> and any password.</p>
             </div>
         </section>
     </div>

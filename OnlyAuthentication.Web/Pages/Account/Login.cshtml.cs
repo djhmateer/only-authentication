@@ -8,8 +8,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Authorization;
 using OnlyAuthentication.Web.Data;
+using Serilog;
 
 namespace OnlyAuthentication.Web.Pages.Account
 {
@@ -102,9 +102,10 @@ namespace OnlyAuthentication.Web.Pages.Account
                     new ClaimsPrincipal(claimsIdentity),
                     authProperties);
 
+                Log.Information($"User {user.Email} Name: {user.FullName} logged in at {DateTime.UtcNow}");
 
                 // creates a 302 Found which then redirects to the resource
-                return LocalRedirect(Url.GetLocalUrl(returnUrl));
+                return LocalRedirect(returnUrl ?? "/");
             }
 
             // Something failed. Redisplay the form.

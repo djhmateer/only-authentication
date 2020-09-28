@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Serilog;
 
-namespace CookieDave.Web.Pages.Account
+namespace OnlyAuthentication.Web.Pages.Account
 {
     public class LogoutModel : PageModel
     {
