@@ -44,7 +44,11 @@ namespace OnlyAuthentication.Web
 
             app.UseAuthentication();
             app.UseAuthorization();
-            app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = SameSiteMode.Strict });
+
+            // If we use strict then will have problems on iPhone Chrome coming back to the site
+            // and being logged out.
+            //app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = SameSiteMode.Strict });
+            app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = SameSiteMode.Lax });
 
             app.UseEndpoints(endpoints =>
             {

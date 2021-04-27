@@ -74,7 +74,8 @@ namespace OnlyAuthentication.Web.Pages.Account
 
                 var authProperties = new AuthenticationProperties
                 {
-                    //AllowRefresh = <bool>,
+                    //AllowRefresh = < bool >,
+                    //AllowRefresh = true,
                     // Refreshing the authentication session should be allowed.
 
                     //ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(10),
@@ -82,7 +83,8 @@ namespace OnlyAuthentication.Web.Pages.Account
                     // value set here overrides the ExpireTimeSpan option of 
                     // CookieAuthenticationOptions set with AddCookie.
 
-                    IsPersistent = false, // false is default
+                    //IsPersistent = false, // false is default
+                    IsPersistent = Input.RememberMe, // false is default
                     //IsPersistent = true,
                     // Whether the authentication session is persisted across 
                     // multiple requests. When used with cookies, controls
